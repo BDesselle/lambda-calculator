@@ -1,6 +1,6 @@
 import React from "react";
 
-const SpecialButton = ({ special }) => { // Passing {special} as props
+const SpecialButton = ({ special, total }) => { // Passing {special} as props
   const style_SpecialButton = {
     background: '#125C99',
     color: '#fff',
@@ -15,7 +15,12 @@ const SpecialButton = ({ special }) => { // Passing {special} as props
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className='clicky' style={style_SpecialButton}>{special}</button>
+      <button
+        className='clicky'
+        style={style_SpecialButton}
+        onClick={total}>
+        {special}
+      </button>
     </>
   );
 };
