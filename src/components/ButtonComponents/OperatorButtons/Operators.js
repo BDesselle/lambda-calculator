@@ -2,7 +2,7 @@ import React, { useState } from "react"; // Imported `useState`
 import OperatorButton from './OperatorButton'; // Importing default export of the {OperatorButton} component
 import { operators } from '../../../data'; // Importing named export of the {operators} component
 
-const Operators = () => {
+const Operators = ({ total }) => {
   // STEP 2 - add the imported data to state
   const [operatorsState] = useState(operators);
 
@@ -23,7 +23,8 @@ const Operators = () => {
       {operatorsState.map(operator => {
         return <OperatorButton
           operator={operator.char}
-          value={operator.value} />
+          value={operator.value}
+          total={total} />
       })}
     </div>
   );
