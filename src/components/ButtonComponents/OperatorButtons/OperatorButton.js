@@ -1,6 +1,6 @@
 import React from "react";
 
-const OperatorButton = ({ operator, value }) => { // Passing {operator, value} as props
+const OperatorButton = ({ operator, value, total }) => { // Passing {operator, value} as props
   const style_Operator = {
     background: '#007497',
     color: '#fff',
@@ -14,7 +14,12 @@ const OperatorButton = ({ operator, value }) => { // Passing {operator, value} a
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className='clicky' style={style_Operator}>{operator}</button>
+      <button
+        className='clicky'
+        style={style_Operator}
+        onClick={total} value={value}>
+        {operator}
+      </button>
     </>
   );
 };
