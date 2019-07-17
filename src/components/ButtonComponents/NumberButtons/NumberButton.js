@@ -1,7 +1,8 @@
 import React from "react";
 
-const NumberButton = ({ number }) => { // Passing {number} as props
+const NumberButton = ({ number, total }) => { // Passing {number} as props
   let style_NumberButton;
+  // eslint-disable-next-line
   if (number == 0) {
     style_NumberButton = {
       background: '#0E447E',
@@ -28,7 +29,12 @@ const NumberButton = ({ number }) => { // Passing {number} as props
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className='clicky' style={style_NumberButton}>{number}</button>
+      <button
+        className='clicky'
+        style={style_NumberButton}
+        onClick={total}>
+        {number}
+      </button>
     </>
   );
 };
