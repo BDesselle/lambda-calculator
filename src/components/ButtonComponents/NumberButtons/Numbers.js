@@ -2,7 +2,7 @@ import React, { useState } from "react"; // Imported `useState`
 import NumberButton from './NumberButton'; // Importing default export of the {NumberButton} component
 import { numbers } from '../../../data'; // Importing named export of the {numbers} component
 
-const Numbers = () => {
+const Numbers = ({ total }) => {
   // STEP 2 - add the imported data to state
   const [numbersState] = useState(numbers);
   const style_Numbers = {
@@ -19,8 +19,8 @@ const Numbers = () => {
       {/* STEP 3 - Use .map() to iterate over your array data and return a button
         component matching the name on the provided file. Pass
         it any props needed by the child component*/}
-      {numbersState.map(number => {
-        return <NumberButton number={number} />
+      {numbersState.map((number, i) => {
+        return <NumberButton key={i} number={number} />
       })}
     </div>
   );
