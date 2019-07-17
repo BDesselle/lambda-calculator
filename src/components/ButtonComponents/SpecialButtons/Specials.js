@@ -2,7 +2,7 @@ import React, { useState } from "react"; // Imported `useState`
 import SpecialButton from './SpecialButton'; // Importing default export of the {SpecialButton} component
 import { specials } from '../../../data'; // Importing named export of the {specials} component
 
-const Specials = () => {
+const Specials = ({ total }) => {
   // STEP 2 - add the imported data to state
   const [specialsState] = useState(specials);
 
@@ -20,7 +20,9 @@ const Specials = () => {
         component matching the name on the provided file. Pass
         it any props needed by the child component*/}
       {specialsState.map(special => {
-        return <SpecialButton special={special} />
+        return <SpecialButton
+          special={special}
+          total={total} />
       })}
     </div>
   );
